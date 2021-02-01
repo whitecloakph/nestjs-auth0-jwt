@@ -1,6 +1,6 @@
 {
   "name": "@whitecloak/nestjs-auth0-jwt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Auth0 JWT Module for NestJS Framework",
   "author": "White Cloak Technologies, Inc.",
   "license": "MIT",
