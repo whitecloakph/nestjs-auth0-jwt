@@ -3,6 +3,8 @@ import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { passportJwtSecret } from 'jwks-rsa';
 import { Auth0Config } from '../dto/auth0.config';
+import {Auth0User} from "../dto/auth0.user";
+import {User} from "../dto/user";
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -22,7 +24,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         });
     }
 
-    validate(payload: unknown): unknown {
-        return payload;
+    validate({ sub }: Auth0User): User {
+        return { id: sub };
     }
 }
